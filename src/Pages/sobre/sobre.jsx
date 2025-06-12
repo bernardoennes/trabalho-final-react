@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./sobre.module.css";
+import { Navbar } from "../../Components/Navbar/navbar";
+import { Footer } from "../../Components/Footer/footer";
+
 
 
 const equipe = [
@@ -7,10 +10,11 @@ const equipe = [
         id : 1,
         nome : "Bernardo",
         cargo : "Pagina do Carrinho" ,
-        habilidades: [],
-        expertise: "",
+        habilidades: ["Paciencia"],
+        expertise: "Git Hub",
         descricao : "",
-        foto : "http"
+        foto : "https://ehgomes.com.br/wp-content/uploads/2023/08/Vectorizer.AI-A-Ferramenta-que-Transforma-Imagens-em-Vetores.webp",
+        link : ""
     },
     {
         id : 2,
@@ -19,7 +23,8 @@ const equipe = [
         habilidades: [],
         expertise: "",
         descricao : "",
-        foto : "http"
+        foto : "https://i.pinimg.com/236x/22/a5/75/22a5750f86f5bde10e03b89459125bef.jpg",
+        link : ""
     },
     {
         id : 3,
@@ -28,7 +33,8 @@ const equipe = [
         habilidades: [],
         expertise: "",
         descricao : "",
-        foto : "http"
+        foto : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55BQs3HG4jOKTIK_dCrjqu1oxu2uKIXBIwQ&s",
+        link : ""
     },
     {
         id : 4,
@@ -37,7 +43,8 @@ const equipe = [
         habilidades: [],
         expertise: "",
         descricao : "",
-        foto : "http"
+        foto : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-0330A3z25jA3JItydBUQshYqAx11pcyRyw&s",
+        link : ""
     },
     {
         id : 5,
@@ -46,7 +53,8 @@ const equipe = [
         habilidades: ["Jogador de CS", "Piloto de Fuga" ],
         expertise: "Gente boa",
         descricao : "",
-        foto : "https://i.pinimg.com/736x/c9/b1/2f/c9b12fd12ec6120cc90b2ea2c9d0cedb.jpg"
+        foto : "https://i.pinimg.com/736x/c9/b1/2f/c9b12fd12ec6120cc90b2ea2c9d0cedb.jpg",
+        link : "https://linkedin.com/in/joão-pedro-dias-rodrigues-27b6801b8"
     },
     {
         id : 6,
@@ -55,17 +63,22 @@ const equipe = [
         habilidades: [],
         expertise: "",
         descricao : "",
-        foto : "http"
+        foto : "https://static.vecteezy.com/ti/fotos-gratis/t2/42730459-leao-perigo-animal-animais-selvagens-natureza-floresta-foto.jpg",
+        link :"",
     }
 ];
 
 const Sobre = () => {
     return (
         <div className={styles.sobreContainer}>
-            <h1 className={styles.sobreTitulo}>Sobre a Nossa Equipe de Desenvolvimento</h1>
+
+            <Navbar/>
+
+
+            <h1 className={styles.sobreTitulo}>Equipe de Desenvolvimento</h1>
             <div className={styles.equipeGrid}>
                 {equipe.map((membro) => (
-                    <div key = {membro.id} className={styles.membroCard}> 
+                    <div key = {membro.id} className={styles.cardMembro}> 
                         <img src={membro.foto} alt={membro.nome} className={styles.membroFoto} />
                         <h2 className={styles.membroNome}>{membro.nome}</h2>
                         <p className={styles.membroCargo}>{membro.cargo}</p>
@@ -80,6 +93,11 @@ const Sobre = () => {
                         <div className={styles.membroExperetise}>
                             <h3>Expertise:</h3>
                             <p>{membro.expertise}</p>
+                        </div>
+                        <div >
+                        <a  className={styles.linkedin}  href={membro.link} target="_blank" rel="noopener noreferrer">
+                            Mais informações
+                        </a>
                         </div>                                                  
                     </div>
                 ))}
