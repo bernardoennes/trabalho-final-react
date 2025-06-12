@@ -1,0 +1,136 @@
+.page {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        circle,
+        #720455 0%,
+        #3C0753 40%,
+        #030637 100%
+    );
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.3rem;
+    font-family: 'Georgia', serif;
+    color: #ffffff;
+}
+
+.card {
+    background-color: rgba(3, 6, 55, 0.95);
+    border-radius: 25px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 720px;
+    box-shadow: 0 0 20px rgba(114, 4, 85, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.iconTop {
+  width: 175px;
+  height: 175px;
+  margin-bottom: 0.3rem;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(114, 4, 85, 0.5);
+}
+
+.inputGrid {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #910A67;
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+input {
+    height: 25px;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #720455;
+    border-radius: 6px;
+    background-color: #301184;
+    color: #ffffff;
+}
+
+input::placeholder {
+    color: #cccccc;
+}
+
+button {
+    margin-top: 1rem;
+    width: 83%;
+    padding: 0.75rem;
+    background-color: #910A67;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 27px;
+    align-self: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #720455;
+}
+
+
+.loginLink {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.loginLink p {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.loginLink a {
+    color: #910A67;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 0.3rem;
+}
+
+.loginLink a:hover {
+    text-decoration: underline;
+}

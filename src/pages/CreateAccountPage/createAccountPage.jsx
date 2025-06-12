@@ -91,105 +91,111 @@ export function Cadastrar(){
     }
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <h1>Cadastro</h1>
+        <div className={styles.page}>
+            <div className={styles.container}>
+                <form onSubmit={handleSubmit} className={styles.card}>
+                    <img src="https://i.postimg.cc/ZntTM2Sj/image.png" alt="Ícone Dark" className={styles.iconTop} />
+                    <h1>Cadastro</h1>
 
-                <label>
-                    Nome
-                    <input
-                        type="text"
-                        placeholder="Insira seu nome"
-                        value={nome}
-                        onChange={(e)=> setNome(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
+                     <div className={styles.inputGrid}>
+                        <div className={styles.column}>
+                            <label>
+                                Nome
+                                <input
+                                type="text"
+                                placeholder="Insira seu nome"
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                                required
+                                />
+                            </label>
 
-                <label>
-                    Email
-                    <input
-                        type="email"
-                        placeholder="Insira seu email"
-                        value={email}
-                        onChange={(e)=> setEmail(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
+                            <label>
+                                CPF
+                                <input
+                                type="text"
+                                placeholder="Insira seu CPF"
+                                value={cpf}
+                                onChange={(e) => setCpf(e.target.value)}
+                                required
+                                />
+                            </label>
 
-                <label>
-                    CPF
-                    <input
-                        type="text"
-                        placeholder="Insira seu CFP"
-                        value={cpf}
-                        onChange={(e)=> setCpf(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
+                            <label>
+                                CEP
+                                <input
+                                type="text"
+                                placeholder="Insira seu CEP"
+                                value={cep}
+                                onChange={(e) => setCep(e.target.value)}
+                                required
+                                />
+                            </label>
 
-                <label>
-                    Telefone
-                    <input
-                        type="text"
-                        placeholder= "Insira seu telefone"
-                        value={telefone}
-                        onChange={(e)=> setTelefone(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
+                            <label>
+                                Email
+                                <input
+                                type="email"
+                                placeholder="Insira seu email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                />
+                            </label>
 
-                <label>
-                    CEP
-                    <input
-                        type="text"
-                        placeholder= "Insira seu CEP"
-                        value={cep}
-                        onChange={(e)=> setCep(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
+                        </div>
 
-                <label>
-                    Senha
-                    <input
-                        type="password"
-                        placeholder= "Insira uma senha"
-                        value={senha}
-                        onChange={(e)=> setSenha(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
+                        <div className={styles.column}>
+                            
+                            <label>
+                                Telefone
+                                <input
+                                type="text"
+                                placeholder="Insira seu telefone"
+                                value={telefone}
+                                onChange={(e) => setTelefone(e.target.value)}
+                                required
+                                />
+                            </label>
 
-                <label>
-                    Confirme a Senha
-                    <input
-                        type="password"
-                        placeholder= "Informe a mesma senha"
-                        value={confirmaSenha}
-                        onChange={(e)=> setConfirmaSenha(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
+                            <label>
+                                Senha
+                                <input
+                                type="password"
+                                placeholder="Insira uma senha"
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                                required
+                                />
+                            </label>
 
-                <button type="submit">Cadastrar</button>
-                
-            </form>
-            {/* <div>
-                <p>
-                    Já possui um cadastro?
-                    <Link to="/login"> 
-                        Clique aqui para Logar!
-                    </Link>
-                </p>
-            </div> */}
+                            <label>
+                                Confirme a Senha
+                                <input
+                                type="password"
+                                placeholder="Confirme a senha"
+                                value={confirmaSenha}
+                                onChange={(e) => setConfirmaSenha(e.target.value)}
+                                required
+                                />
+                            </label>
+
+                            <button type="submit">Cadastrar</button>
+                        </div>
+                    </div>
+
+                    
+                    
+                </form>
+                {/* <div className={styles.loginLinkWrapper}>
+                    <p>
+                        Se já possuir uma vela acesa...
+                        <Link to="/login"> 
+                            Clique aqui para Logar!
+                        </Link>
+                    </p>
+                </div> */}
+            </div>
         </div>
     )
 
