@@ -1,0 +1,32 @@
+.button {
+  background-color: #910a67;
+  border: 1px solid #910a67;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  height: 7vh;
+  width: 8vh;
+  color: #030637;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.button img {
+  width: 60%;
+  height: auto;
+  display: block;
+  align-self: center;
+}
+
+.button:hover {
+  transform: scale(1.02);
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .button {
+  background-color: #3c0753;
+  border: 1px solid #3c0753;
+  color: #000000;
+}

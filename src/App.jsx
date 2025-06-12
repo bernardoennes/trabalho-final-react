@@ -1,10 +1,15 @@
-import Login from './pages/login/login'; 
+import { useState } from "react";
+import { HomePage } from "./Pages/Homepage/home";
+import { BrowserRouter } from 'react-router-dom';
+// import { AppRoutes } from "./Routes";
+
 function App() {
-  
+  const [count, setCount] = useState(0);
+
   return (
-    <div>
-      <Login />
-    </div>
+    <BrowserRouter>
+      <HomePage />
+    </BrowserRouter>
   );
 }
 
