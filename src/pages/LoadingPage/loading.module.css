@@ -1,0 +1,19 @@
+/* src/components/Loading.css */
+
+.loading-container {
+  text-align: center;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.loading-icon {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  color: #555;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

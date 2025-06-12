@@ -1,6 +1,47 @@
 import {useState } from 'react'
+import axios from 'axios';
+import { Loading } from '../LoadingPage/loadingpage';
+
+const urlApi = 'http://localhost:8080/clientes';
 
 export function Cadastrar(){
+
+    //post na api
+    async function PostApi(obj) {
+        try {
+
+            setLoading(true)
+
+            const response = await axios.post(urlApi, obj, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+
+            console.log(response.status)
+            
+            if(response.status === 201 || response.status === 200){
+                alert("DEU CERTO PORRA")
+            }
+            else{
+                alert("ñ funfou :(")
+            }
+
+        } 
+        catch (error) {
+            console.error("Erro ao cadastrar:", error.response?.data || error.message);
+            alert("Erro ao cadastrar. Verifique os dados.");
+        }
+        finally {
+            setLoading(false); // <-- encerra o loading sempre
+        }
+        
+    
+    }   
+
+    //loading
+    const [loading, setLoading] = useState(false);
+
     // Criar os campos a serem preenchidos
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -10,15 +51,38 @@ export function Cadastrar(){
     const [senha, setSenha] = useState('');
     const [confirmaSenha, setConfirmaSenha] = useState('');
 
-    function handleSubmit(e){
-        e.preventDefault();
-        
-        alert(`${nome}\n${email}\n${cpf}\n${telefone}\n${cep}\n${senha}\n${confirmaSenha}\n`) //test com alert
-
-        //chamar a funcção da api
+    const userObj = {
+        "nome": nome,
+        "email": email,
+        "telefone": telefone,
+        "cep": cep,
+        "cpf": cpf,
+        "senha": senha,
+        "confirmaSenha": confirmaSenha
     }
 
-    //passar no return...
+    function handleSubmit(e){
+        e.preventDefault();
+
+        if (senha !== confirmaSenha) {
+            alert("As senhas não coincidem.");
+            return;
+        }
+        
+        //test com alert
+        //alert(`${nome}\n${email}\n${cpf}\n${telefone}\n${cep}\n${senha}\n${confirmaSenha}\n`) 
+
+        //chamar a funcção da api
+        PostApi(userObj)
+        
+    }
+
+    if(loading){
+        return(
+            <Loading/>
+        )
+    }
+
     return(
         <div>
             <form onSubmit={handleSubmit}>
