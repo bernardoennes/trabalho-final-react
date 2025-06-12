@@ -1,6 +1,7 @@
 import {useState } from 'react'
 import axios from 'axios';
-import { Loading } from '../LoadingPage/loadingpage';
+import { Loading } from '../../elements/Loading/loading';
+import { Link } from 'react-router-dom';
 
 const urlApi = 'http://localhost:8080/clientes';
 
@@ -175,6 +176,14 @@ export function Cadastrar(){
                 <button type="submit">Cadastrar</button>
                 
             </form>
+            {/* <div>
+                <p>
+                    Já possui um cadastro?
+                    <Link to="/login"> 
+                        Clique aqui para Logar!
+                    </Link>
+                </p>
+            </div> */}
         </div>
     )
 
