@@ -12,9 +12,9 @@ export function Cadastrar(){
 
     function handleSubmit(e){
         e.preventDefault();
-
         
         alert(`${nome}\n${email}\n${cpf}\n${telefone}\n${cep}\n${senha}\n${confirmaSenha}\n`) //test com alert
+
         //chamar a funcção da api
     }
 
@@ -31,8 +31,10 @@ export function Cadastrar(){
                         placeholder="Insira seu nome"
                         value={nome}
                         onChange={(e)=> setNome(e.target.value)}
+                        required
                     />
                 </label>
+                <br/>
 
                 <label>
                     Email
@@ -41,8 +43,10 @@ export function Cadastrar(){
                         placeholder="Insira seu email"
                         value={email}
                         onChange={(e)=> setEmail(e.target.value)}
+                        required
                     />
                 </label>
+                <br/>
 
                 <label>
                     CPF
@@ -51,8 +55,10 @@ export function Cadastrar(){
                         placeholder="Insira seu CFP"
                         value={cpf}
                         onChange={(e)=> setCpf(e.target.value)}
+                        required
                     />
                 </label>
+                <br/>
 
                 <label>
                     Telefone
@@ -61,8 +67,10 @@ export function Cadastrar(){
                         placeholder= "Insira seu telefone"
                         value={telefone}
                         onChange={(e)=> setTelefone(e.target.value)}
+                        required
                     />
                 </label>
+                <br/>
 
                 <label>
                     CEP
@@ -71,8 +79,10 @@ export function Cadastrar(){
                         placeholder= "Insira seu CEP"
                         value={cep}
                         onChange={(e)=> setCep(e.target.value)}
+                        required
                     />
                 </label>
+                <br/>
 
                 <label>
                     Senha
@@ -81,8 +91,10 @@ export function Cadastrar(){
                         placeholder= "Insira uma senha"
                         value={senha}
                         onChange={(e)=> setSenha(e.target.value)}
+                        required
                     />
                 </label>
+                <br/>
 
                 <label>
                     Confirme a Senha
@@ -91,8 +103,10 @@ export function Cadastrar(){
                         placeholder= "Informe a mesma senha"
                         value={confirmaSenha}
                         onChange={(e)=> setConfirmaSenha(e.target.value)}
+                        required
                     />
                 </label>
+                <br/>
 
                 <button type="submit">Cadastrar</button>
                 
