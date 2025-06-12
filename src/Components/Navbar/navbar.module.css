@@ -17,7 +17,7 @@
 }
 
 .logo {
-  background-image: url("../../assets/0Logo.png");
+  background-image: url("https://i.postimg.cc/02mXGRd2/0Logo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,8 +53,11 @@
 }
 
 .baseBotao {
+  background-image: url("https://i.postimg.cc/Jh7TWywG/0Tema.png");
   width: 10vh;
   height: 10vh;
+  background-repeat: no-repeat;
+  object-fit: cover;
   border-radius: 50%;
   text-shadow: 0 0 20px #dde9f760;
 }
@@ -112,8 +115,7 @@
 
 :global(body.tema-claro) .nomeDoSite {
   text-shadow: 0 0 8px #00031660;
-  color: #3C0753;
-
+  color: #3c0753;
 }
 
 :global(body.tema-claro) .baseBotao {
@@ -121,7 +123,7 @@
 }
 
 :global(body.tema-claro) .categorias {
-  background-color: #3C0753;
+  background-color: #3c0753;
 }
 
 .navbar,

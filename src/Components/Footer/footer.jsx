@@ -1,7 +1,5 @@
 import styles from "./footer.module.css";
 
-import Logo from "../../assets/0Logo.png";
-
 import { Termos } from "../FooterItens/Termos/termos";
 import { SecoesTematicas } from "../FooterItens/secoesTematicas/secoesTematicas";
 import { Mapa } from "../FooterItens/Mapa/mapa";
@@ -21,7 +19,7 @@ export function Footer() {
       </div>
 
       <div className={styles.ladoDireito}>
-        <img className={styles.logo} src={Logo} alt="Logo" />
+        <img className={styles.logo} src="https://i.postimg.cc/02mXGRd2/0Logo.png" alt="Logo" />
       </div>
     </footer>
   );
