@@ -41,7 +41,8 @@ export function Navbar() {
     <div>
       <nav className={styles.navbar}>
         <div className={styles.intro}>
-          <div className={styles.logo} />
+          <div className={styles.logoBack}>
+            <img className={styles.logo} src="https://i.postimg.cc/02mXGRd2/0Logo.png" alt="Logo icon"/></div> 
           <div className={styles.nomeDoSite}>O Canto do Corvo</div>
         </div>
 

@@ -16,17 +16,25 @@
   gap: 1.05vh;
 }
 
-.logo {
+.logoBack {
   background-image: url("https://i.postimg.cc/02mXGRd2/0Logo.png");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  object-fit: cover;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 10vh;
+  height: 10vh;
   border-radius: 50px;
   background-color: #720455;
   box-shadow: 0 0 8px #00031660;
+  overflow: hidden;
+}
+
+.logo {
+  width: 10vh;
+  height: 10vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .nomeDoSite {
