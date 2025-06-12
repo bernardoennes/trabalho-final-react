@@ -1,7 +1,9 @@
 import {useState } from 'react'
 import axios from 'axios';
 import { Loading } from '../../elements/Loading/loading';
+import styles from './createAccountPage.module.css'
 import { Link } from 'react-router-dom';
+import { CadastroRealizado } from './cardCadastroRealizado/cadastroRealizado';
 
 const urlApi = 'http://localhost:8080/clientes';
 
@@ -22,10 +24,14 @@ export function Cadastrar(){
             console.log(response.status)
             
             if(response.status === 201 || response.status === 200){
-                alert("DEU CERTO PORRA")
+                //card com confirmação
+                return(
+                    <CadastroRealizado nome={userObj.nome} email={userObj.email}/>
+                )
+                
             }
             else{
-                alert("ñ funfou :(")
+                alert("Não funfou :(")
             }
 
         } 
@@ -187,6 +193,5 @@ export function Cadastrar(){
         </div>
     )
 
-    // Criar funcção asíncrona q envia os dados para a Api
-    // Devolver uma resposta para o user e enviar ele para a pág. de Login(Karen)
+    
 }

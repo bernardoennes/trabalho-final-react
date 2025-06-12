@@ -1,5 +1,5 @@
 
-export function CadastroRealizado({nome}){
+export function CadastroRealizado({nome, email}){
     return(
         <div>
             <h1>{nome}</h1>
@@ -12,7 +12,7 @@ export function CadastroRealizado({nome}){
                 histórias que desafiam a sanidade e autores que talvez nunca tenham saído 
                 realmente deste mundo...
                 <br /><br />
-                🔍 Acendemos uma vela digital para você — uma mensagem foi enviada ao e-mail informado. 
+                🔍 Acendemos uma vela digital para você — uma mensagem foi enviada para {email}. 
                 Confira sua caixa de entrada (e os cantos obscuros do spam, onde às vezes os horrores se escondem).
                 <br /><br />
                 Que os Antigos guiem sua leitura.
