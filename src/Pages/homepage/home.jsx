@@ -7,6 +7,7 @@ export function HomePage() {
         <>
         <Navbar/>
         <Footer/>
+        <Link to="/cadastro">Cadastre-se</Link>
         </>
     )
     
