@@ -184,17 +184,22 @@ export function Cadastrar(){
                         </div>
                     </div>
 
-                    
-                    
-                </form>
-                {/* <div className={styles.loginLinkWrapper}>
                     <p>
                         Se já possuir uma vela acesa...
-                        <Link to="/login"> 
+                        {/* <Link to="/login"> 
                             Clique aqui para Logar!
-                        </Link>
+                        </Link> */}
                     </p>
-                </div> */}
+                    
+                </form>
+                <div className={styles.loginLinkWrapper}>
+                    {/* <p>
+                        Se já possuir uma vela acesa...
+                        {/* <Link to="/login"> 
+                            Clique aqui para Logar!
+                        </Link> 
+                    </p> */}
+                </div>
             </div>
         </div>
     )
