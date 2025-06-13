@@ -58,8 +58,15 @@
 
 h1 {
     text-align: center;
-    margin: 1rem;
+    margin: 0.7rem;
     color: #910A67;
+}
+
+h2 {
+    text-align: center;
+    margin: 0.5rem;
+    color: #910A67;
+    font-size: 2.3rem;
 }
 
 label {
@@ -73,7 +80,7 @@ input {
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.3rem;
-    border: 1px solid #720455;
+    border: 1.5px solid #8c00ff;
     border-radius: 15px;
     background-color: #301184;
     color: #ffffff;
@@ -81,6 +88,11 @@ input {
 
 input::placeholder {
     color: #cccccc;
+}
+
+input:focus{
+    border: 2.5px solid #bb1b89;
+    outline: none; 
 }
 
 button {
@@ -102,7 +114,6 @@ button {
 button:hover {
     background-color: #720455;
 }
-
 
 .loginLink {
     text-align: center;

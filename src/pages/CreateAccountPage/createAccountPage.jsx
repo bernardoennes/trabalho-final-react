@@ -94,8 +94,9 @@ export function Cadastrar(){
         <div className={styles.page}>
             <div className={styles.container}>
                 <form onSubmit={handleSubmit} className={styles.card}>
+                    <h1>O canto do corvo</h1>
                     <img src="https://i.postimg.cc/ZntTM2Sj/image.png" alt="Ícone Dark" className={styles.iconTop} />
-                    <h1>Cadastro</h1>
+                    <h2>Cadastro</h2>
 
                      <div className={styles.inputGrid}>
                         <div className={styles.column}>
