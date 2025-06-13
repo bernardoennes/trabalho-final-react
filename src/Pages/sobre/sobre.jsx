@@ -70,12 +70,10 @@ const equipe = [
 
 const Sobre = () => {
     return (
+        <div>
         <div className={styles.sobreContainer}>
-
             <Navbar/>
-
-
-            <h1 className={styles.sobreTitulo}>Equipe de Desenvolvimento</h1>
+            <h1 className={styles.sobreTitulo}>Magos do Desenvolvimento</h1>
             <div className={styles.equipeGrid}>
                 {equipe.map((membro) => (
                     <div key = {membro.id} className={styles.cardMembro}> 
@@ -102,6 +100,8 @@ const Sobre = () => {
                     </div>
                 ))}
             </div>
+        </div>
+            <Footer />
         </div>
     );
 }
