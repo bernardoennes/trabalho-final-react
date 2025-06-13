@@ -7,20 +7,22 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: fixed;
     padding: 2rem;
+    top: 0;
+    left: 0;
 }
 
 .fireBackground {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, #910a67 0%, #3c0753 30%, #030637 75%);
-    animation: flickerBlue 4s infinite ease-in-out;
-    z-index: -1;
-    opacity: 0.15;
-    filter: blur(80px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.25;
+    filter: brightness(0.7) blur(2px);
 }
 
 @keyframes flickerBlue {
@@ -68,7 +70,7 @@
     text-align: justify;
 }
 
-/* Responsividade extra para celulares menores */
+
 @media (max-width: 480px) {
     .card {
         padding: 1rem;

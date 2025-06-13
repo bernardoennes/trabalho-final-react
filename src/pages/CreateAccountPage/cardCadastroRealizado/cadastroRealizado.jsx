@@ -1,8 +1,14 @@
 import styles from './cadastroRealizado.module.css'
+import fireVideo from '../../../assets/videos/FlamesVideo.mp4'
 
 export function CadastroRealizado({nome, email}){
     return(
         <div className={styles.fireWrapper}>
+            <video className={styles.fireBackground} autoPlay muted loop playsInline>
+                <source src= {fireVideo}/>
+                Seu navegador não suporta vídeo em background.
+            </video>
+
             <div className={styles.fireBackground}></div>
             <div className={styles.card}>
                 <h1 className={styles.title}>{nome}</h1>

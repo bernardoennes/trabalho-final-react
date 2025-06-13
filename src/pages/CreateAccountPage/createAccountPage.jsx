@@ -25,10 +25,7 @@ export function Cadastrar(){
             
             if(response.status === 201 || response.status === 200){
                 //card com confirmação
-                return(
-                    <CadastroRealizado nome={userObj.nome} email={userObj.email}/>
-                )
-                
+                setCadastroSucesso(true);
             }
             else{
                 alert("Não funfou :(")
@@ -36,11 +33,12 @@ export function Cadastrar(){
 
         } 
         catch (error) {
+            setLoading(false); 
             console.error("Erro ao cadastrar:", error.response?.data || error.message);
-            alert("Erro ao cadastrar. Verifique os dados.");
+            alert(`Erro ao cadastrar. Verifique os dados.\n${error.response?.data}`);
         }
         finally {
-            setLoading(false); // <-- encerra o loading sempre
+            setLoading(false); 
         }
         
     
@@ -48,6 +46,7 @@ export function Cadastrar(){
 
     //loading
     const [loading, setLoading] = useState(false);
+    const [cadastroSucesso, setCadastroSucesso] = useState(false);
 
     // Criar os campos a serem preenchidos
     const [nome, setNome] = useState('');
@@ -88,6 +87,10 @@ export function Cadastrar(){
         return(
             <Loading/>
         )
+    }
+
+    if (cadastroSucesso) {
+        return <CadastroRealizado nome={userObj.nome} email={userObj.email} />;
     }
 
     return(
@@ -193,14 +196,6 @@ export function Cadastrar(){
                     </p>
                     
                 </form>
-                <div className={styles.loginLinkWrapper}>
-                    {/* <p>
-                        Se já possuir uma vela acesa...
-                        {/* <Link to="/login"> 
-                            Clique aqui para Logar!
-                        </Link> 
-                    </p> */}
-                </div>
             </div>
         </div>
     )

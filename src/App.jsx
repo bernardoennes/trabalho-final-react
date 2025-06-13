@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import { Cadastrar } from './pages/CreateAccountPage/createAccountPage'
+import { CadastroRealizado } from './pages/CreateAccountPage/cardCadastroRealizado/cadastroRealizado'
 
 function App() {
 
   return (
-    <div >
-      <Cadastrar />
-    </div>
+  
+    <CadastroRealizado nome={"Nk"} email={"test@gmail.com"} />
    
   )
 }
