@@ -1,4 +1,5 @@
 import {useState } from 'react'
+import { FaHome } from 'react-icons/fa';
 import axios from 'axios';
 import { Loading } from '../../elements/Loading/loading';
 import styles from './createAccountPage.module.css'
@@ -96,6 +97,11 @@ export function Cadastrar(){
     return(
         <div className={styles.page}>
             <div className={styles.container}>
+                <p className={styles.backHome}>
+                    <Link to="/">
+                        <FaHome className={styles.icon} /> Voltar para a Home
+                    </Link>
+                </p>
                 <form onSubmit={handleSubmit} className={styles.card}>
                     <h1>O canto do corvo</h1>
                     <img src="https://i.postimg.cc/ZntTM2Sj/image.png" alt="Ícone Dark" className={styles.iconTop} />
