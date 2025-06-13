@@ -81,6 +81,12 @@
     text-align: justify;
 }
 
+.link {
+  color: #910a67;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 @media (max-width: 480px) {
     .card {

@@ -1,7 +1,28 @@
 import styles from './cadastroRealizado.module.css'
 import fireVideo from '../../../assets/videos/FlamesVideo.mp4'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function CadastroRealizado({nome, email}){
+
+    const [countdown, setCountdown] = useState(15);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCountdown(atual => atual - 1);
+        }, 1000);
+
+        const redirect = setTimeout(() => {
+            
+        }, 15000);
+
+        return () => {
+            clearInterval(timer);
+            clearTimeout(redirect);
+        };
+    }, [navigate]);
+
     return(
         <div className={styles.fireWrapper}>
             <video className={styles.fireBackground} autoPlay muted loop playsInline>
@@ -28,6 +49,8 @@ export function CadastroRealizado({nome, email}){
                     Que os Antigos guiem sua leitura.
                     <br />
                     <strong>A jornada começa agora.</strong>
+                    <br /><br />
+                    <strong>Redirecionando em {countdown} segundos...</strong> ou <span className={styles.link} onClick={() => navigate('/login')}>clique aqui para teleportar agora</span>.
                 </p>
             </div>
         </div>
