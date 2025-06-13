@@ -1,7 +1,5 @@
 import styles from "./menuusuario.module.css";
 
-import defaultFoto from "../../assets/0Perfil.png";
-
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
@@ -33,7 +31,7 @@ export function MenuUsuario() {
 
   return (
     <div className={styles.menuDeUsuario}>
-      <img src={defaultFoto} alt="Foto de Perfil" className={styles.avatar} />
+      <img src="https://i.postimg.cc/3xFL6Xcs/0Perfil.png" alt="Foto de Perfil" className={styles.avatar} />
       <div className={styles.suspenso}>
         <ul>
           <li onClick={() => navigate("/perfil")}>Perfil</li>
