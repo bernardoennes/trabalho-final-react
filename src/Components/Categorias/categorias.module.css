@@ -1,10 +1,24 @@
 .categoriasItens {
   list-style: none;
   display: flex;
-  gap: 2rem;
-  margin: 0;
+  gap: 3vh;
+  margin: 1vh 0 0 0;
   padding: 0;
   align-items: center;
+  width:80%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #720455 transparent;
+}
+
+.categoriasItens::-webkit-scrollbar {
+  height: 6px;
+}
+
+.categoriasItens::-webkit-scrollbar-thumb {
+  background-color: #720455;
+  border-radius: 3px;
 }
 
 .menuItem a {
@@ -13,7 +27,7 @@
   text-shadow: 0 2px 8px #03063780;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
-  font-size: 2.5vh;
+  font-size: 2vh;
   text-transform: uppercase;
   letter-spacing: 1.03px;
   display: inline-block;
@@ -26,6 +40,10 @@
 }
 
 /* Darkmode */
+
+:global(body.tema-claro) .categoriasItens {
+  scrollbar-color: #3c0753 transparent;
+}
 
 :global(body.tema-claro) .menuItem a {
   color: #910a67;
