@@ -1,0 +1,65 @@
+.fireWrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #030637;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.fireBackground {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, #910a67 0%, #3c0753 30%, #030637 75%);
+  animation: flickerBlue 4s infinite ease-in-out;
+  z-index: -1;
+  opacity: 0.15;
+  filter: blur(80px);
+}
+
+@keyframes flickerBlue {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+.card {
+  background-color: rgba(3, 6, 55, 0.85); /* base #030637 com transparência */
+  border: 1px solid #3c0753;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  color: #e0d6f5;
+  box-shadow: 0 0 20px rgba(114, 4, 85, 0.4);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 2rem;
+  color: #910a67;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
