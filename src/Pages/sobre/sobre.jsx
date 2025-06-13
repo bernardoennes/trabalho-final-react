@@ -10,9 +10,8 @@ const equipe = [
         id : 1,
         nome : "Bernardo",
         cargo : "Pagina do Carrinho" ,
-        habilidades: ["Paciencia"],
-        expertise: "Git Hub",
-        descricao : "",
+        habilidades: ["Paciencia", "Criatividade", "Trabalho em equipe", "Resiliência", "Comunicação"],
+        expertise: "Desenvolvedor Front-end, apaixonado por criar interfaces intuitivas e funcionais. Sempre em busca de aprender novas tecnologias e melhorar minhas habilidades.",
         foto : "https://ehgomes.com.br/wp-content/uploads/2023/08/Vectorizer.AI-A-Ferramenta-que-Transforma-Imagens-em-Vetores.webp",
         link : ""
     },
@@ -22,7 +21,6 @@ const equipe = [
         cargo : "Pagina de Cadastro" ,
         habilidades: [],
         expertise: "",
-        descricao : "",
         foto : "https://i.pinimg.com/236x/22/a5/75/22a5750f86f5bde10e03b89459125bef.jpg",
         link : ""
     },
@@ -32,7 +30,6 @@ const equipe = [
         cargo : "Pagina de Login" ,
         habilidades: [],
         expertise: "",
-        descricao : "",
         foto : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55BQs3HG4jOKTIK_dCrjqu1oxu2uKIXBIwQ&s",
         link : ""
     },
@@ -42,7 +39,6 @@ const equipe = [
         cargo : "Pagina Home" ,
         habilidades: [],
         expertise: "",
-        descricao : "",
         foto : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-0330A3z25jA3JItydBUQshYqAx11pcyRyw&s",
         link : ""
     },
@@ -51,8 +47,7 @@ const equipe = [
         nome : "João Pedro",
         cargo : "Pagina Sobre" ,
         habilidades: ["Jogador de CS", "Piloto de Fuga" ],
-        expertise: "Gente boa",
-        descricao : "",
+        expertise: "Front-end, apaixonado por criar interfaces intuitivas e funcionais (mesmo que as vezes não funcione kkk). Sempre em busca de aprender novas tecnologias e melhorar minhas habilidades.",
         foto : "https://i.pinimg.com/736x/c9/b1/2f/c9b12fd12ec6120cc90b2ea2c9d0cedb.jpg",
         link : "https://linkedin.com/in/joão-pedro-dias-rodrigues-27b6801b8"
     },
@@ -62,7 +57,6 @@ const equipe = [
         cargo : "Pagina de Perfil",
         habilidades: [],
         expertise: "",
-        descricao : "",
         foto : "https://static.vecteezy.com/ti/fotos-gratis/t2/42730459-leao-perigo-animal-animais-selvagens-natureza-floresta-foto.jpg",
         link :"",
     }
