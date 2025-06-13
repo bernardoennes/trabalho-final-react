@@ -1,7 +1,7 @@
 .sobreContainer {
     min-height: 100vh;
     padding: 0 0 20px 0;
-    background-color: #c4d4e7;
+    background-color: #000316;
   }
 
   /* #4e114e */
@@ -16,7 +16,7 @@
   .equipeGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
     
@@ -34,8 +34,8 @@
   }
 
   .cardMembro {
-    background-color: #3C0753 ;
-    border: 1px solid #000000;
+    background-color: #720455 ;
+    border: 1px solid #000316;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -48,7 +48,7 @@
   
   .cardMembro:hover {
     transform: scale(1.05);
-    box-shadow: 1px 1px 4px 4px #ce99da
+    box-shadow: 1px 1px 4px 4px #b57efd
     
   }
   
@@ -67,7 +67,7 @@
   }
   
   .membroCargo {
-    color: #c4d4e7;
+    color: #000316;
     font-weight: bold;
     margin-bottom: 15px;
   }
@@ -89,7 +89,15 @@
 }
 
 .linkedin{
-    color: #ffffff;
+    color: #000316;
     font-weight: bold;
 }
-  
+
+
+
+/*
+#3C0753
+#c4d4e7
+#000316
+#720455
+ */
