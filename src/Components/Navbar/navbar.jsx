@@ -3,11 +3,6 @@ import styles from "./navbar.module.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import iconCarrinho from "../../assets/0Carrinho.png";
-import iconTema from "../../assets/0Tema.png";
-import iconBusca from "../../assets/0Busca.png";
-import iconBuscaClaro from "../../assets/0BuscaClaro.png";
-
 import { Button } from "../Button/Redondo/button";
 import { ButtonSearch } from "../Button/Busca/buttonSearch";
 import { Input } from "../Input/Busca/input";
@@ -21,7 +16,7 @@ export function Navbar() {
   // Troca de tema
   const [temaClaro, setTemaClaro] = useState(() => {
     const salvaTema = localStorage.getItem("tema");
-    return salvaTema === "escuro";
+    return salvaTema === "claro";
   });
 
   useEffect(() => {
@@ -46,7 +41,8 @@ export function Navbar() {
     <div>
       <nav className={styles.navbar}>
         <div className={styles.intro}>
-          <div className={styles.logo} />
+          <div className={styles.logoBack}>
+            <img className={styles.logo} src="https://i.postimg.cc/02mXGRd2/0Logo.png" alt="Logo icon"/></div> 
           <div className={styles.nomeDoSite}>O Canto do Corvo</div>
         </div>
 
@@ -58,13 +54,20 @@ export function Navbar() {
           />
           <ButtonSearch
             onClick={handleBusca}
-            icon={temaClaro ? iconBuscaClaro : iconBusca}
+            icon={
+              temaClaro
+                ? "https://i.postimg.cc/w3KJxr7w/0-Busca-Claro.png"
+                : "https://i.postimg.cc/L4JbXZJP/0Busca.png"
+            }
           />
         </div>
 
         <div className={styles.menu}>
           <div className={styles.baseBotao}>
-            <Button icon={iconCarrinho} onClick={() => navigate("/carrinho")} />
+            <Button
+              icon="https://i.postimg.cc/7Zksmsm1/0-Carrinho.png"
+              onClick={() => navigate("/carrinho")}
+            />
           </div>
           <div className={styles.baseBotao}>
             <MenuUsuario />
@@ -75,8 +78,11 @@ export function Navbar() {
               onClick={toggleTheme}
               title={temaClaro ? "Claro" : "Escuro"}
             >
-              {" "}
-              <img className={styles.atalhoTema} src={iconTema} alt="Tema" />
+              <img
+                className={styles.atalhoTema}
+                src="https://i.postimg.cc/Jh7TWywG/0Tema.png"
+                alt="Tema"
+              />
             </button>
           </div>
         </div>
