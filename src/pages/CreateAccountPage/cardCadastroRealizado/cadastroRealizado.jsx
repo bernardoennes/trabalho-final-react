@@ -11,6 +11,7 @@ export function CadastroRealizado({nome, email}){
 
             <div className={styles.fireBackground}></div>
             <div className={styles.card}>
+                <img src="https://i.postimg.cc/ZntTM2Sj/image.png" alt="Ícone Dark" className={styles.logo} />
                 <h1 className={styles.title}>{nome}</h1>
                 <p className={styles.text}>
                     🕯️ <strong>Boas vindas à Irmandade das Sombras Literárias</strong> 🕯️
