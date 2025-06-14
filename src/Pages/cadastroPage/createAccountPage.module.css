@@ -32,6 +32,7 @@
 .backHome {
     margin-top: 1rem;
     text-align: center;
+    font-size: 1rem;
 }
 
 .backHome a {
@@ -41,7 +42,7 @@
     color: #910a67;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .backHome a:hover {
@@ -52,10 +53,26 @@
     font-size: 1.2rem;
 }
 
+.head {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 1rem;
+}
+
+.head h1{
+    color: #ffffff;
+    text-shadow: 0 0 5px #910A67;
+}
+
+.titulo {
+  color: #910A67;
+}
+
 
 .iconTop {
-    width: 175px;
-    height: 175px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 0.3rem;
     border-radius: 30px;
     box-shadow: 0 0 20px rgba(114, 4, 85, 0.5);
@@ -100,7 +117,7 @@ label {
 }
 
 input {
-    height: 25px;
+    height: 40px;
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.3rem;
@@ -119,18 +136,17 @@ input:focus {
     outline: none; 
 }
 
-button {
-    margin-top: 1rem;
+.inputGrid button {
+    margin-top: 20px;
     width: 83%;
     padding: 0.75rem;
     background-color: #910A67;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     color: #fff;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 27px;
     align-self: center;
     transition: background-color 0.3s ease;
 }
@@ -142,12 +158,10 @@ button:hover {
 .loginLink {
     text-align: center;
     margin-top: 1.5rem;
+    color: #ffffff;
+    font-size: 1.1rem;
 }
 
-.loginLink p {
-    color: #ffffff;
-    font-size: 0.95rem;
-}
 
 .loginLink a {
     color: #910A67;

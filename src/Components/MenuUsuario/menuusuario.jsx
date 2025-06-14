@@ -23,7 +23,6 @@ export function MenuUsuario() {
       navigate("/cadastro")
     }
 
-
   }
 
   const handleLogout = async () => {
@@ -53,7 +52,7 @@ export function MenuUsuario() {
       <img src="https://i.postimg.cc/3xFL6Xcs/0Perfil.png" alt="Foto de Perfil" className={styles.avatar} />
       <div className={styles.suspenso}>
         <ul>
-          <li onClick={verifLogin}>Perfil</li>
+          <li onClick={verifLogin}>{logado ? "Perfil" : "Logar"}</li>
           <li onClick={() => navigate("/pedidos")}>Meus Pedidos</li>
           <li onClick={() => navigate("/favoritos")}>Favoritos</li>
           <li onClick={() => navigate("/configuracoes")}>Configurações</li>

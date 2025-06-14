@@ -97,17 +97,19 @@ export function Cadastrar(){
     return(
         <div className={styles.page}>
             <div className={styles.container}>
-                <p className={styles.backHome}>
-                    <Link to="/">
-                        <FaHome className={styles.icon} /> Voltar para a Home
-                    </Link>
-                </p>
                 <form onSubmit={handleSubmit} className={styles.card}>
-                    <h1>O canto do corvo</h1>
-                    <img src="https://i.postimg.cc/ZntTM2Sj/image.png" alt="Ícone Dark" className={styles.iconTop} />
-                    <h2>Cadastro</h2>
+                    <p className={styles.backHome}>
+                        <Link to="/">
+                            <FaHome className={styles.icon} /> Teleportar para a Home
+                        </Link>
+                    </p>
+                    <div className={styles.head}>
+                        <img src="https://i.postimg.cc/ZntTM2Sj/image.png" alt="Ícone Dark" className={styles.iconTop} />
+                        <h1 className={styles.titulo}>O canto do corvo</h1>
+                    </div>
+                    <h2 className={styles.titulo}>Cadastro</h2>
 
-                     <div className={styles.inputGrid}>
+                    <div className={styles.inputGrid}>
                         <div className={styles.column}>
                             <label>
                                 Nome
@@ -194,10 +196,10 @@ export function Cadastrar(){
                         </div>
                     </div>
 
-                    <p>
-                        Se já possuir uma vela acesa...
+                    <p className={styles.loginLink}>
+                        Se já possuir uma vela acesa... 
                         <Link to="/login"> 
-                            Clique aqui para Logar!
+                             Clique aqui para Logar!
                         </Link>
                     </p>
                     
