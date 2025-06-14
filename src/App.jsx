@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import { Cadastrar } from './pages/CreateAccountPage/createAccountPage'
-import { CadastroRealizado } from './pages/CreateAccountPage/cardCadastroRealizado/cadastroRealizado'
+import { useState } from "react";
+import { HomePage } from "./Pages/Homepage/home";
+import { Router } from "./Routes/Router";
+// import { AppRoutes } from "./Routes";
+
 
 function App() {
 
   return (
-  
-    <CadastroRealizado nome={"Nk"} email={"test@gmail.com"} />
-   
-  )
+      <Router />
+  );
+
 }
 
-export default App
+export default App;

@@ -1,0 +1,26 @@
+.button {
+  height: 5vh;
+  width: 40vh;
+  padding: 0 5vh 0 5vh;
+  background-color: #910a67;
+  border: 1px solid #910a67;
+  border-radius: 8px;
+  color: #030637;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 550;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px #910a6750;
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .button {
+  background-color: #3c0753;
+  border: 1px solid #3c0753;
+  color: #910a67;
+}

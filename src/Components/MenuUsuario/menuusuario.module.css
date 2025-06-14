@@ -1,0 +1,84 @@
+.menuDeUsuario {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+}
+
+.suspenso {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #000316;
+  border-radius: 0 0 8px 8px;
+  padding: 0.5rem 0;
+  z-index: 1111;
+  width: 35vh;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.suspenso ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.suspenso ul li {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  list-style-type: none;
+}
+
+.suspenso ul li {
+  color: #720455;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  text-shadow: #08152550;
+}
+
+.suspenso ul li:hover {
+  background-color: #72045560;
+}
+
+.suspenso ul li a:hover {
+  background-color: transparent;
+}
+
+.menuDeUsuario:hover .suspenso {
+  display: flex;
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .suspenso {
+  background-color: #c4d4e7;
+}
+
+:global(body.tema-claro) .suspenso ul li {
+  color: #3c0753;
+}
+
+:global(body.tema-claro) .suspenso ul li:hover {
+  background-color: #3c075350;
+}

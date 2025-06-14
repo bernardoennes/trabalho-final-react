@@ -1,0 +1,142 @@
+.navbar {
+  width: 100%;
+  height: 14vh;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 2vh;
+  padding: 0vh 1vh 0vh 1vh;
+  background-color: #000316;
+  box-shadow: 0 2px 8px #03063780;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 1.05vh;
+}
+
+.logoBack {
+  background-image: url("https://i.postimg.cc/02mXGRd2/0Logo.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50px;
+  background-color: #720455;
+  box-shadow: 0 0 8px #00031660;
+  overflow: hidden;
+}
+
+.logo {
+  width: 10vh;
+  height: 10vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.nomeDoSite {
+  color: #720455;
+  font-family: "Felipa", serif;
+  font-size: 5vh;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 20px #dde9f760;
+  margin-left: 1vh;
+}
+
+.busca {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.menu {
+  display: flex;
+  gap: 2vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.baseBotao {
+  background-image: url("https://i.postimg.cc/Jh7TWywG/0Tema.png");
+  width: 10vh;
+  height: 10vh;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 50%;
+  text-shadow: 0 0 20px #dde9f760;
+}
+
+.busca {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.buscaIcon {
+  color: #910a67;
+  filter: grayscale(90%);
+  font-size: 4vh;
+}
+
+.botaoTema {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 10vh;
+  height: 10vh;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.botaoTema:hover {
+  transform: scale(1.02);
+}
+
+.atalhoTema {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.categorias {
+  background-color: #720455;
+  width: 100%;
+  padding: 1vh 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px #03063780;
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .navbar {
+  background-color: #c4d4e7;
+}
+
+:global(body.tema-claro) .nomeDoSite {
+  text-shadow: 0 0 8px #00031660;
+  color: #3c0753;
+}
+
+:global(body.tema-claro) .baseBotao {
+  text-shadow: 0 0 20px #dde9f760;
+}
+
+:global(body.tema-claro) .categorias {
+  background-color: #3c0753;
+}
+
+.navbar,
+.nomeDoSite,
+.baseBotao,
+.categorias {
+  transition: background-color 0.5s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
