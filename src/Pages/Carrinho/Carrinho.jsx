@@ -17,7 +17,7 @@ const Carrinho = () => {
       .get("http://localhost:8080/produtos", {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyZUBlbWFpbC5jb20iLCJleHAiOjE3NDk3NzA3MjV9.xZww8vD_0nCgVrkm4efCNxzjpe-Obv3UhqF7GpKKwqU",
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2FvQGVtYWlsLmNvbSIsImV4cCI6MTc0OTg2MTIwNH0.rA99yYLJj60wYTnAphDNgjY_PoiLF9X7t-JqG8kX0Ag",
         },
       })
       .then((res) => {
@@ -126,9 +126,6 @@ const Carrinho = () => {
                         <span className={styles.disponibilidade}>
                           ✓ Em estoque
                         </span>
-                        <span className={styles.entrega}>
-                          🚚 Entrega gratuita
-                        </span>
                       </div>
                     </div>
 
@@ -207,11 +204,6 @@ const Carrinho = () => {
                     <span>R$ {calcularTotal().toFixed(2)}</span>
                   </div>
 
-                  <div className={styles.resumoItem}>
-                    <span>Frete:</span>
-                    <span className={styles.freteGratis}>GRÁTIS</span>
-                  </div>
-
                   <div className={styles.resumoTotal}>
                     <span>Total:</span>
                     <span className={styles.valorTotal}>
@@ -226,18 +218,6 @@ const Carrinho = () => {
                   <div className={styles.seguranca}>
                     <span className={styles.iconeSeguranca}>🔒</span>
                     <span>Compra 100% segura</span>
-                  </div>
-                </div>
-
-                <div className={styles.cupomDesconto}>
-                  <h4 className={styles.cupomTitulo}>Cupom de desconto</h4>
-                  <div className={styles.cupomInput}>
-                    <input
-                      type="text"
-                      placeholder="Digite seu cupom"
-                      className={styles.inputCupom}
-                    />
-                    <button className={styles.botaoCupom}>Aplicar</button>
                   </div>
                 </div>
               </div>
