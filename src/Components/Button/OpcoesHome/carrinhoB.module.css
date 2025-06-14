@@ -1,0 +1,31 @@
+.botao {
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #720455;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.botao:hover {
+  border-radius: 50%;
+  background-color: rgba(114, 4, 85, 0.7);
+  border: none;
+}
+
+.carrinho {
+  color: #c4d4e7;
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .botao {
+  background-color: #3c0753;
+}
+
+:global(body.tema-claro) .botao:hover {
+  background-color: rgb(60, 7, 83, 0.7);
+}

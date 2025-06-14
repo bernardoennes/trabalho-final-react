@@ -1,0 +1,56 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1vh;
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  border-radius: 1vh;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 9px 0;
+}
+
+.livroImagem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.opcoes {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 16px 8px 16px;
+  gap: 0.5vh;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .card {
+    width: 260px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 250px;
+    height: 320px;
+  }
+}

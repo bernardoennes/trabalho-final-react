@@ -1,0 +1,27 @@
+.tag {
+  width: 16vh;
+  height: 7vh;
+  border-radius: 10px;
+  background-color: #720455;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tagPreco {
+  font-size: 14px;
+  font-weight: 350;
+  text-align: center;
+  color: #c4d4e7;
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-self: center;
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .tag {
+  background-color: #3c0753;
+}

@@ -5,22 +5,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export function Categorias() {
+  const [categorias, setCategorias] = useState([]);
 
-  const categorias = [
-    { nome: "Romance Gótico", pagina: "/categoria/romance" },
-    { nome: "Clássicos", pagina: "/categoria/classico" },
-    { nome: "Coleções", pagina: "/categoria/colecoes" },
-    { nome: "Horror", pagina: "/categoria/horror" },
-    { nome: "Suspense", pagina: "/categoria/suspense" },
-    { nome: "Aventura", pagina: "/categoria/aventura" },
-    { nome: "Ação", pagina: "/categoria/ficcao" },
-    { nome: "Vampiros", pagina: "/categoria/ficcao" },
-    { nome: "Lobos", pagina: "/categoria/ficcao" },
-    { nome: "Magia", pagina: "/categoria/ficcao" },
-    { nome: "Ficção Científica", pagina: "/categoria/ficcao" },
-    { nome: "Ficção Científica", pagina: "/categoria/ficcao" },
-    { nome: "Ficção Científica", pagina: "/categoria/ficcao" },
-  ];
+  useEffect(() => {
+    axios.get("http://localhost:8080/categorias").then((res) => {
+      setCategorias(res.data);
+    });
+  }, []);
 
   useEffect(() => {
     const categoriaSalva = localStorage.getItem("categoria") || "";
