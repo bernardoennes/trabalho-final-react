@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function CadastroRealizado({nome, email}){
 
-    const [countdown, setCountdown] = useState(15);
+    const [countdown, setCountdown] = useState(30);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -14,8 +14,8 @@ export function CadastroRealizado({nome, email}){
         }, 1000);
 
         const redirect = setTimeout(() => {
-            
-        }, 15000);
+            navigate('/login')
+        }, 30000);
 
         return () => {
             clearInterval(timer);
