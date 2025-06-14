@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Lock, Mail, User, LogOut } from "lucide-react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import axios from "axios"; // Certifique-se de ter axios instalado
 import './login.css';
 
-export default function Login() {
+export function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
@@ -37,8 +38,39 @@ export default function Login() {
       return;
     }
 
-    setErro("");
-    setLogado(true);
+    try {
+      const response = await axios.post("http://localhost:8080/login", {
+        username: email,
+        password: senha
+      });
+
+      const token = response.headers['authorization'] || response.headers['Authorization'];
+
+      if (token) {
+        localStorage.setItem("token", token);
+
+        const clientesResp = await axios.get("http://localhost:8080/clientes", {
+          headers: { Authorization: token }
+        });
+
+        const cliente = clientesResp.data.find(c => c.email === email);
+        if (cliente) {
+          localStorage.setItem("nome", cliente.nome);
+          localStorage.setItem("email", cliente.email);
+          localStorage.setItem("telefone", cliente.telefone);
+          localStorage.setItem("cep", cliente.cep);
+          localStorage.setItem("cpf", cliente.cpf);
+        }
+
+        setErro("");
+        setLogado(true);
+      } else {
+        setErro("Token não recebido. Verifique o backend.");
+      }
+    } catch (err) {
+      setErro("Usuário ou senha inválidos.");
+    }
+
     setLoading(false);
   }
 
@@ -55,12 +87,12 @@ export default function Login() {
         <div className="dashboard-card">
           <div className="dashboard-header">
             <div className="icon-container success-icon">
-              { <User className="icon" /> }
+              <User className="icon" />
             </div>
-            <h1 className="dashboard-title">Bem-vindo ao Canto do corvo!</h1>
+            <h1 className="dashboard-title">Bem-vindo ao Canto do Corvo!</h1>
             <p className="dashboard-subtitle">Acesso autorizado com sucesso</p>
           </div>
-          
+
           <div className="user-info">
             <p className="user-label">Usuário autenticado:</p>
             <p className="user-email">{email}</p>
@@ -80,10 +112,12 @@ export default function Login() {
       <div className="login-card">
         <div className="login-header">
           <div className="icon-container primary-icon">
+            <Lock className="icon" />
           </div>
           <h2 className="login-title">Login</h2>
-          <p className="login-subtitle"> "Aqui repousam livros que ousam tocar a alma — este é o Canto do Corvo." 
-            </p>
+          <p className="login-subtitle">
+            "Aqui repousam livros que ousam tocar a alma — este é o Canto do Corvo."
+          </p>
         </div>
 
         <div className="form-container">
@@ -138,7 +172,8 @@ export default function Login() {
             Use qualquer e-mail válido e senha com 6 ou + caracteres
           </p>
           <p className="footer-text">
-            O Corvo chama por novos leitores... responda ao chamado <Link to="/cadastro">Cadastre-se</Link>
+            O Corvo chama por novos leitores... responda ao chamado{" "}
+            <Link to="/cadastro">Cadastre-se</Link>
           </p>
         </div>
       </div>
