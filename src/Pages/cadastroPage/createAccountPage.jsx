@@ -196,9 +196,9 @@ export function Cadastrar(){
 
                     <p>
                         Se já possuir uma vela acesa...
-                        {/* <Link to="/login"> 
+                        <Link to="/login"> 
                             Clique aqui para Logar!
-                        </Link> */}
+                        </Link>
                     </p>
                     
                 </form>
