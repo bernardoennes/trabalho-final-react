@@ -25,3 +25,12 @@
 :global(body.tema-claro) .tag {
   background-color: #3c0753;
 }
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .tag {
+    width: 100px;
+    height: 50px;
+  }
+}

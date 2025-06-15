@@ -5,7 +5,7 @@ import { Descricao } from "../Button/OpcoesHome/descricao";
 import { Tag } from "../Tag/tag";
 import { Rotulo } from "../Rotulo/rotulo";
 
-export function Card({ nome, preco, imagem, descricao }) {
+export function Card({ nome, preco, imagem, descricao, addCarrinho }) {
   return (
     <div className={styles.cardContainer}>
       <Rotulo>{nome}</Rotulo>
@@ -13,7 +13,7 @@ export function Card({ nome, preco, imagem, descricao }) {
         <img className={styles.livroImagem} alt={nome} src={imagem} />
       </div>
       <div className={styles.opcoes}>
-        <CarrinhoB />
+        <CarrinhoB addCarrinho={addCarrinho} />
         <Tag>R$ {preco}</Tag>
         <Descricao text={descricao} />
       </div>

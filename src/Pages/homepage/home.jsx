@@ -9,9 +9,7 @@ export function HomePage() {
     <div className={styles.container}>
       <Navbar />
       <div className={styles.body}>
-
-      <Grid/>
-
+        <Grid />
       </div>
       <Footer />
     </div>

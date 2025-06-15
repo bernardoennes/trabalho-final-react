@@ -13,18 +13,6 @@ export function Categorias() {
     });
   }, []);
 
-  useEffect(() => {
-    const categoriaSalva = localStorage.getItem("categoria") || "";
-
-    axios.get("http://localhost:8080/produtos").then((res) => {
-      const produtosFiltrados = res.data.filter(
-        (produto) => produto.categoria === categoriaSalva
-      );
-      setProdutos(produtosFiltrados);
-      setLoading(false);
-    });
-  }, []);
-
   return (
     <ul className={styles.categoriasItens}>
       {categorias.map((item, index) => (

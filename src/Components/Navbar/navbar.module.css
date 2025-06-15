@@ -61,6 +61,7 @@
 }
 
 .baseBotao {
+  background-color: #000316;
   width: 60px;
   height: 60px;
   display: flex;
@@ -138,7 +139,7 @@
 }
 
 :global(body.tema-claro) .baseBotao {
-  text-shadow: 0 0 20px #dde9f760;
+  background-color: #000316;
 }
 
 :global(body.tema-claro) .categorias {
@@ -176,7 +177,7 @@
   .nomeDoSite {
     font-size: 4vh;
     margin-left: 0.5vh;
-    letter-spacing: 1px/* Reduz espaçamento das letras */
+    letter-spacing: 1px; /* Reduz espaçamento das letras */
   }
 
   .baseBotao,

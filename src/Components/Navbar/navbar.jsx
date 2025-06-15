@@ -83,7 +83,7 @@ export function Navbar() {
               title={temaClaro ? "Claro" : "Escuro"}
             >
               <img
-                className={styles.atalhoTema}
+                className={styles.botaoTema}
                 src="https://i.postimg.cc/Jh7TWywG/0Tema.png"
                 alt="Tema"
               />

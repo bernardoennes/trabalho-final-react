@@ -119,9 +119,8 @@
   }
 
   .ladoDireito {
-    width: 100%;
+    width: 50%;
     text-align: center;
-    margin-top: 2vh;
   }
 
   .logo {
@@ -146,8 +145,7 @@
   }
 
   .ladoEsquerdo,
-  .meio,
-  .ladoDireito {
+  .meio {
     width: 100%;
     justify-content: center;
     text-align: center;

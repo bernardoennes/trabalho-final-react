@@ -2,9 +2,9 @@ import styles from "./carrinhoB.module.css";
 
 import { ShoppingCart } from "lucide-react";
 
-export function CarrinhoB({ onClick }) {
+export function CarrinhoB({ addCarrinho }) {
   return (
-    <button onClick={onClick} className={styles.botao}>
+    <button onClick={addCarrinho} className={styles.botao}>
       <ShoppingCart className={styles.carrinho} />
     </button>
   );
