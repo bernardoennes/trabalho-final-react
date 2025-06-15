@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card } from "../Cards/card";
 import axios from "axios";
 
-export function Grid({ categoria }) {
+export function Grid({ categoria, busca }) {
   const [produtos, setProdutos] = useState([]);
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [carrinho, setCarrinho] = useState([]);
@@ -27,21 +27,31 @@ export function Grid({ categoria }) {
       setPaginaAtual(paginaAtual + 1);
     }
   };
+
   useEffect(() => {
     axios.get("http://localhost:8080/produtos").then((res) => {
+      let filtrados = res.data;
       if (categoria) {
-        setProdutos(
-          res.data.filter(
-            (p) =>
-              p.categoria &&
-              p.categoria.toLowerCase() === categoria.toLowerCase()
-          )
+        filtrados = filtrados.filter(
+          (p) =>
+            p.categoria &&
+            p.categoria.toLowerCase() === categoria.toLowerCase()
         );
-      } else {
-        setProdutos(res.data);
       }
+      if (busca) {
+        filtrados = filtrados.filter(
+          (p) =>
+            p.nome &&
+            p.nome.toLowerCase().includes(busca.toLowerCase())
+        );
+      }
+      filtrados.sort((a, b) =>
+        a.nome.localeCompare(b.nome, undefined, { sensitivity: "base" })
+      );
+      setProdutos(filtrados);
+      setPaginaAtual(1);
     });
-  }, [categoria]);
+  }, [categoria, busca]);
 
   const addCarrinho = (produto) => {
     setCarrinho((antCarrinho) => {
@@ -56,14 +66,13 @@ export function Grid({ categoria }) {
       setPopupConfirmaAdd(false);
     }, 3000);
   };
+
   return (
     <div className={styles.pageContainer}>
-      {" "}
       {popupConfirmaAdd && (
         <div className={styles.popupConfirmaAdd}>{retornoPopup}</div>
-      )}{" "}
+      )}
       <div className={styles.gridContainer}>
-        {" "}
         {produtosPaginaAtual.map((produto, idx) => (
           <Card
             key={idx}
@@ -73,32 +82,28 @@ export function Grid({ categoria }) {
             descricao={produto.descricao}
             addCarrinho={() => addCarrinho(produto)}
           />
-        ))}{" "}
-      </div>{" "}
+        ))}
+      </div>
       <div className={styles.botoesNavegacao}>
-        {" "}
         <button
           onClick={paginaAnterior}
           disabled={paginaAtual === 1}
           className={styles.botaoPaginacao}
         >
-          {" "}
-          <ArrowLeft />{" "}
-        </button>{" "}
+          <ArrowLeft />
+        </button>
         <button
           onClick={proximaPagina}
           disabled={paginaAtual === totalPaginas}
           className={styles.botaoPaginacao}
         >
-          {" "}
-          <ArrowRight />{" "}
-        </button>{" "}
-      </div>{" "}
+          <ArrowRight />
+        </button>
+      </div>
       <div className={styles.infoPaginacao}>
-        {" "}
         Página {paginaAtual} de {totalPaginas} - Mostrando{" "}
-        {produtosPaginaAtual.length} produtos{" "}
-      </div>{" "}
+        {produtosPaginaAtual.length} produtos
+      </div>
     </div>
   );
 }

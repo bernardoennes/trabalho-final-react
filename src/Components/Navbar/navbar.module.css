@@ -127,6 +127,26 @@
   box-shadow: 0 2px 8px #03063780;
 }
 
+.carrinhoNotificacao {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: #dc2626;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 4px #00000040;
+  pointer-events: none;
+}
+
 /* Darkmode */
 
 :global(body.tema-claro) .navbar {
