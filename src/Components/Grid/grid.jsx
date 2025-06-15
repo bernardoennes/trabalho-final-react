@@ -10,7 +10,7 @@ export function Grid() {
   const [carrinho, setCarrinho] = useState([]);
   const [popupConfirmaAdd, setPopupConfirmaAdd] = useState(false);
   const [retornoPopup, setRetornoPopup] = useState("");
-  const produtosPorPagina = 30;
+  const produtosPorPagina = 12;
   const indiceUltimo = paginaAtual * produtosPorPagina;
   const indicePrimeiro = indiceUltimo - produtosPorPagina;
   const produtosPaginaAtual = produtos.slice(indicePrimeiro, indiceUltimo);
