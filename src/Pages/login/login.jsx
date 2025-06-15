@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Lock, Mail, User, LogOut } from "lucide-react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import { Link, Navigate } from "react-router-dom";
+import axios from "axios"
 import './login.css';
 
 export function Login() {
@@ -98,9 +98,9 @@ export function Login() {
             <p className="user-email">{email}</p>
           </div>
 
-          <button onClick={handleLogout} className="logout-btn">
+          <button onClick={() => (window.location.href = "/")} className="logout-btn">
             <LogOut className="btn-icon" />
-            Sair
+            Voltar para Home
           </button>
         </div>
       </div>

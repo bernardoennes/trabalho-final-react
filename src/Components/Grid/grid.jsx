@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card } from "../Cards/card";
 import axios from "axios";
 
-export function Grid() {
+export function Grid({ categoria }) {
   const [produtos, setProdutos] = useState([]);
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [carrinho, setCarrinho] = useState([]);
@@ -15,11 +15,13 @@ export function Grid() {
   const indicePrimeiro = indiceUltimo - produtosPorPagina;
   const produtosPaginaAtual = produtos.slice(indicePrimeiro, indiceUltimo);
   const totalPaginas = Math.ceil(produtos.length / produtosPorPagina);
+
   const paginaAnterior = () => {
     if (paginaAtual > 1) {
       setPaginaAtual(paginaAtual - 1);
     }
   };
+
   const proximaPagina = () => {
     if (paginaAtual < totalPaginas) {
       setPaginaAtual(paginaAtual + 1);
@@ -27,9 +29,20 @@ export function Grid() {
   };
   useEffect(() => {
     axios.get("http://localhost:8080/produtos").then((res) => {
-      setProdutos(res.data);
+      if (categoria) {
+        setProdutos(
+          res.data.filter(
+            (p) =>
+              p.categoria &&
+              p.categoria.toLowerCase() === categoria.toLowerCase()
+          )
+        );
+      } else {
+        setProdutos(res.data);
+      }
     });
-  }, []);
+  }, [categoria]);
+
   const addCarrinho = (produto) => {
     setCarrinho((antCarrinho) => {
       const novoCarrinho = [...antCarrinho, produto];

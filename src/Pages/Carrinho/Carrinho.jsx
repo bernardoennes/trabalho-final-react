@@ -14,12 +14,7 @@ const Carrinho = () => {
     const nomesCarrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
     axios
-      .get("http://localhost:8080/produtos", {
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2FvQGVtYWlsLmNvbSIsImV4cCI6MTc0OTg2MTIwNH0.rA99yYLJj60wYTnAphDNgjY_PoiLF9X7t-JqG8kX0Ag",
-        },
-      })
+      .get("http://localhost:8080/produtos")
       .then((res) => {
         const produtosNoCarrinho = res.data.filter((produto) =>
           nomesCarrinho.includes(produto.nome)

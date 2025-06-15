@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "../Pages/Homepage/home";
 import Carrinho from "../Pages/Carrinho/Carrinho";
 import { Cadastrar } from "../pages/cadastroPage/createAccountPage";
-import Login from "../pages/login/login";
+import { Login } from "../Pages/login/login";
 
 export function Router() {
     return  (
@@ -11,6 +11,7 @@ export function Router() {
             <Route path="/carrinho" element={<Carrinho/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/cadastro" element={<Cadastrar/>}/>
+            <Route path="/categoria/:nomeCategoria" element={<HomePage />}/>
         </Routes>
     )
 }
