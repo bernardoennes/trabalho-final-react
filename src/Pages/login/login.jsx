@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Lock, Mail, User, LogOut } from "lucide-react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import axios from "axios";
 import './login.css';
 
 export function Login() {
@@ -37,8 +38,39 @@ export function Login() {
       return;
     }
 
-    setErro("");
-    setLogado(true);
+    try {
+      const response = await axios.post("http://localhost:8080/login", {
+        username: email,
+        password: senha
+      });
+
+      const token = response.headers['authorization'] || response.headers['Authorization'];
+
+      if (token) {
+        localStorage.setItem("token", token);
+
+        const clientesResp = await axios.get("http://localhost:8080/clientes", {
+          headers: { Authorization: token }
+        });
+
+        const cliente = clientesResp.data.find(c => c.email === email);
+        if (cliente) {
+          localStorage.setItem("nome", cliente.nome);
+          localStorage.setItem("email", cliente.email);
+          localStorage.setItem("telefone", cliente.telefone);
+          localStorage.setItem("cep", cliente.cep);
+          localStorage.setItem("cpf", cliente.cpf);
+        }
+
+        setErro("");
+        setLogado(true);
+      } else {
+        setErro("Token não recebido. Verifique o backend.");
+      }
+    } catch (err) {
+      setErro("Usuário ou senha inválidos.");
+    }
+
     setLoading(false);
   }
 
@@ -60,7 +92,7 @@ export function Login() {
             <h1 className="dashboard-title">Bem-vindo ao Canto do corvo!</h1>
             <p className="dashboard-subtitle">Acesso autorizado com sucesso</p>
           </div>
-          
+
           <div className="user-info">
             <p className="user-label">Usuário autenticado:</p>
             <p className="user-email">{email}</p>
@@ -82,8 +114,9 @@ export function Login() {
           <div className="icon-container primary-icon">
           </div>
           <h2 className="login-title">Login</h2>
-          <p className="login-subtitle"> "Aqui repousam livros que ousam tocar a alma — este é o Canto do Corvo." 
-            </p>
+          <p className="login-subtitle">
+            "Aqui repousam livros que ousam tocar a alma — este é o Canto do Corvo."
+          </p>
         </div>
 
         <div className="form-container">
@@ -138,7 +171,8 @@ export function Login() {
             Use qualquer e-mail válido e senha com 6 ou + caracteres
           </p>
           <p className="footer-text">
-            O Corvo chama por novos leitores... responda ao chamado <Link to="/cadastro">Cadastre-se</Link>
+            O Corvo chama por novos leitores... responda ao chamado{" "}
+            <Link to="/cadastro">Cadastre-se</Link>
           </p>
         </div>
       </div>
