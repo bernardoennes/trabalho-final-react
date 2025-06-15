@@ -23,7 +23,7 @@
   transform: scale(1.02);
 }
 
-/* Darkmode */
+/* Modo Claro */
 
 :global(body.tema-claro) .button {
   background-color: #3c0753;

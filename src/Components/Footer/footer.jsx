@@ -8,19 +8,30 @@ import { Ajuda } from "../FooterItens/Ajuda/ajuda";
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.ladoEsquerdo}>
-        <Ajuda />
+      <div className={styles.footerColunas}>
+        <div className={styles.ladoEsquerdo}>
+          <Ajuda />
+        </div>
+
+        <div className={styles.meio}>
+          <Termos />
+          <SecoesTematicas />
+          <Mapa />
+        </div>
+
+        <div className={styles.ladoDireito}>
+          <img
+            className={styles.logo}
+            src="https://i.postimg.cc/02mXGRd2/0Logo.png"
+            alt="Logo"
+          />
+        </div>
       </div>
 
-      <div className={styles.meio}>
-        <Termos />
-        <SecoesTematicas />
-        <Mapa />
-      </div>
-
-      <div className={styles.ladoDireito}>
-        <img className={styles.logo} src="https://i.postimg.cc/02mXGRd2/0Logo.png" alt="Logo" />
-      </div>
+      <p className={styles.copy}>
+        &copy; 2025 ChineseKingdom. Todos os direitos reservados. — Trabalho
+        Individual, Laryssa Peixoto - Desenvolvimento Web
+      </p>
     </footer>
   );
 }
