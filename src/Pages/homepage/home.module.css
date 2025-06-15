@@ -1,9 +1,15 @@
-.bodyContainer {
+.container {
     padding:0;
     margin:0;
 }
 
 .body {
-    padding:0;
+    padding:1vh;
     background: linear-gradient(to left, #000316, #3C0753, #000316)
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .body {
+    background: linear-gradient(to left, #73528660, #a592b1, #73528660)
 }

@@ -15,8 +15,21 @@
 .chamada {
   color: #720455;
   font-weight: 600;
-  font-size: 2.8vh;
+  font-size: 18px;
   font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .icon {
+    width: 20vh;
+    height: 20vh;
+  }
+
+  .chamada {
+    font-size: 2vh;
+  }
 }

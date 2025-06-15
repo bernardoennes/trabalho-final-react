@@ -42,7 +42,12 @@ export function Navbar() {
       <nav className={styles.navbar}>
         <div className={styles.intro}>
           <div className={styles.logoBack}>
-            <img className={styles.logo} src="https://i.postimg.cc/02mXGRd2/0Logo.png" alt="Logo icon"/></div> 
+            <img
+              className={styles.logo}
+              src="https://i.postimg.cc/02mXGRd2/0Logo.png"
+              alt="Logo icon"
+            />
+          </div>
           <div className={styles.nomeDoSite}>O Canto do Corvo</div>
         </div>
 
@@ -74,12 +79,11 @@ export function Navbar() {
           </div>
           <div className={styles.baseBotao}>
             <button
-              className={styles.botaoTema}
               onClick={toggleTheme}
               title={temaClaro ? "Claro" : "Escuro"}
             >
               <img
-                className={styles.atalhoTema}
+                className={styles.botaoTema}
                 src="https://i.postimg.cc/Jh7TWywG/0Tema.png"
                 alt="Tema"
               />

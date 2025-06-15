@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Lock, Mail, User, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
-import axios from "axios"; // Certifique-se de ter axios instalado
+import axios from "axios";
 import './login.css';
 
 export function Login() {
@@ -87,9 +87,9 @@ export function Login() {
         <div className="dashboard-card">
           <div className="dashboard-header">
             <div className="icon-container success-icon">
-              <User className="icon" />
+              { <User className="icon" /> }
             </div>
-            <h1 className="dashboard-title">Bem-vindo ao Canto do Corvo!</h1>
+            <h1 className="dashboard-title">Bem-vindo ao Canto do corvo!</h1>
             <p className="dashboard-subtitle">Acesso autorizado com sucesso</p>
           </div>
 
@@ -112,7 +112,6 @@ export function Login() {
       <div className="login-card">
         <div className="login-header">
           <div className="icon-container primary-icon">
-            <Lock className="icon" />
           </div>
           <h2 className="login-title">Login</h2>
           <p className="login-subtitle">
