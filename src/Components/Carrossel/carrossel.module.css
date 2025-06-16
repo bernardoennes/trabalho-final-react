@@ -42,6 +42,11 @@
 .bannerText h1 {
   font-size: 48px;
   margin-bottom: 16px;
+  color: #720455
+}
+
+:global(body.tema-claro) .bannerText h1 {
+  color: #3c0753;
 }
 
 .bannerText p {
