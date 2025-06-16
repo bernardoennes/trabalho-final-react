@@ -1,0 +1,96 @@
+.botao {
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #720455;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.botao:hover {
+  border-radius: 50%;
+  background-color: rgba(114, 4, 85, 0.7);
+  border: none;
+}
+
+.descricao {
+  color: #c4d4e7;
+}
+
+.popupBackground {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(60, 7, 83, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  width: 45%;
+  height: 45%;
+  background: rgb(0, 3, 22, 0.97);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+  align-content: center;
+  position: relative;
+  color: #c4d4e7;
+  font-family: "Rubik", sans-serif;
+  font-weight: 200;
+  font-size: 2.5vh;
+}
+
+.botaoFechar {
+  margin-top: 2rem;
+  background-color: #8b005d;
+  color: #c4d4e7;
+  border: none;
+  padding: 2vh 3vh 2vh 3vh;
+  border-radius: 6px;
+  font-family: "Rubik", sans-serif;
+  font-size: 2vh;
+  cursor: pointer;
+}
+
+/* Darkmode */
+
+:global(body.tema-claro) .botao {
+  background-color: #3c0753;
+}
+
+:global(body.tema-claro) .botao:hover {
+  background-color: rgb(60, 7, 83, 0.7);
+}
+
+:global(body.tema-claro) .popupBackground {
+  background-color: rgb(60, 7, 83, 0.3);
+}
+
+:global(body.tema-claro) .popup {
+  background-color: #c4d4e7;
+  color: #000316;
+}
+
+:global(body.tema-claro) .botaoFechar {
+  background: #3c0753;
+  color: #c4d4e7;
+  padding: 2vh 3vh 2vh 3vh;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .botao {
+    width: 50px;
+    height: 50px;
+  }
+}

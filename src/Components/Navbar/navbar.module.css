@@ -51,6 +51,8 @@
   display: flex;
   align-items: center;
   gap: 0;
+  max-width: 400px;
+  width: 100%;
 }
 
 .menu {
@@ -61,13 +63,25 @@
 }
 
 .baseBotao {
-  background-image: url("https://i.postimg.cc/Jh7TWywG/0Tema.png");
-  width: 10vh;
-  height: 10vh;
-  background-repeat: no-repeat;
-  object-fit: cover;
+  background-color: #000316;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  text-shadow: 0 0 20px #dde9f760;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.baseBotao > * {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .busca {
@@ -86,8 +100,8 @@
   border: none;
   outline: none;
   border-radius: 50%;
-  width: 10vh;
-  height: 10vh;
+  width: 60px;
+  height: 60px;
   padding: 0;
   background: none;
   cursor: pointer;
@@ -115,6 +129,28 @@
   box-shadow: 0 2px 8px #03063780;
 }
 
+.carrinhoNotificacao {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 22px;
+  height: 22px;
+  background: #dc2626;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 4px #00000040;
+  pointer-events: none;
+  border: 2px solid #fff; /* opcional: borda branca para destacar */
+  line-height: 1;
+  padding: 0;
+}
+
 /* Darkmode */
 
 :global(body.tema-claro) .navbar {
@@ -127,7 +163,7 @@
 }
 
 :global(body.tema-claro) .baseBotao {
-  text-shadow: 0 0 20px #dde9f760;
+  background-color: #000316;
 }
 
 :global(body.tema-claro) .categorias {
@@ -139,4 +175,188 @@
 .baseBotao,
 .categorias {
   transition: background-color 0.5s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 2vh 1.5vh;
+    gap: 1.5vh;
+  }
+
+  .logoBack {
+    width: 8vh;
+    height: 8vh;
+  }
+
+  .logo {
+    width: 8vh;
+    height: 8vh;
+  }
+
+  .nomeDoSite {
+    font-size: 4vh;
+    margin-left: 0.5vh;
+    letter-spacing: 1px; /* Reduz espaçamento das letras */
+  }
+
+  .baseBotao,
+  .baseBotao > *,
+  .botaoTema {
+    width: 50px;
+    height: 50px;
+    font-size: 3vh;
+  }
+
+  .atalhoTema {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .buscaIcon {
+    font-size: 3.5vh;
+  }
+
+  .menu {
+    gap: 1.5vh;
+  }
+
+  .busca {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1vh 2vw;
+    gap: 1vh;
+  }
+
+  .intro {
+    justify-content: center;
+    gap: 1vh;
+  }
+
+  .logoBack {
+    width: 7vh;
+    height: 7vh;
+  }
+
+  .logo {
+    width: 7vh;
+    height: 7vh;
+  }
+
+  .nomeDoSite {
+    font-size: 3.5vh;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 3vh;
+    margin-top: 1vh;
+  }
+
+  .baseBotao,
+  .baseBotao > *,
+  .botaoTema {
+    width: 45px;
+    height: 45px;
+  }
+
+  .atalhoTema {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .buscaIcon {
+    font-size: 3vh;
+  }
+
+  .categorias {
+    flex-wrap: wrap;
+    gap: 1vh;
+  }
+
+  .busca {
+    max-width: 90vw;
+    width: 100%;
+    margin: 0 auto;
+    flex: 1 1 100%;
+  }
+}
+
+/* Barra de pesquisa responsiva */
+.busca {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 400px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .busca {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .busca {
+    max-width: 90vw;
+    width: 100%;
+    margin: 0 auto;
+    flex: 1 1 100%;
+  }
+}
+
+/* Bolinha de notificação responsiva */
+.carrinhoNotificacao {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 22px;
+  height: 22px;
+  background: #dc2626;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 4px #00000040;
+  pointer-events: none;
+  border: 2px solid #fff;
+  line-height: 1;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .carrinhoNotificacao {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    top: -5px;
+    left: -5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carrinhoNotificacao {
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    top: -4px;
+    left: -4px;
+  }
 }

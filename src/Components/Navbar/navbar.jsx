@@ -12,12 +12,11 @@ import { MenuUsuario } from "../MenuUsuario/menuusuario";
 export function Navbar() {
   const navigate = useNavigate();
   const [busca, setBusca] = useState("");
-
-  // Troca de tema
   const [temaClaro, setTemaClaro] = useState(() => {
     const salvaTema = localStorage.getItem("tema");
     return salvaTema === "claro";
   });
+  const [qtdCarrinho, setQtdCarrinho] = useState(0);
 
   useEffect(() => {
     if (temaClaro) {
@@ -28,11 +27,28 @@ export function Navbar() {
     localStorage.setItem("tema", temaClaro ? "claro" : "escuro");
   }, [temaClaro]);
 
+  // atualizei o contador 
+  useEffect(() => {
+    function atualizarQtdCarrinho() {
+      const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+      setQtdCarrinho(carrinho.length);
+    }
+    atualizarQtdCarrinho();
+
+    // esse EventListener é pra "escutar" as mudanças seja la qual seja a pagina
+    window.addEventListener("storage", atualizarQtdCarrinho);
+    window.addEventListener("carrinhoUpdate", atualizarQtdCarrinho);
+
+    return () => {
+      window.removeEventListener("storage", atualizarQtdCarrinho);
+      window.removeEventListener("carrinhoUpdate", atualizarQtdCarrinho);
+    };
+  }, []);
+
   const toggleTheme = () => {
     setTemaClaro((prevMode) => !prevMode);
   };
 
-  // Busca
   const handleBusca = () => {
     navigate(`/search?q=${encodeURIComponent(busca)}`);
   };
@@ -42,7 +58,12 @@ export function Navbar() {
       <nav className={styles.navbar}>
         <div className={styles.intro}>
           <div className={styles.logoBack}>
-            <img className={styles.logo} src="https://i.postimg.cc/02mXGRd2/0Logo.png" alt="Logo icon"/></div> 
+            <img
+              className={styles.logo}
+              src="https://i.postimg.cc/02mXGRd2/0Logo.png"
+              alt="Logo icon"
+            />
+          </div>
           <div className={styles.nomeDoSite}>O Canto do Corvo</div>
         </div>
 
@@ -63,23 +84,27 @@ export function Navbar() {
         </div>
 
         <div className={styles.menu}>
-          <div className={styles.baseBotao}>
+          <div className={styles.baseBotao} style={{ position: "relative" }}>
             <Button
               icon="https://i.postimg.cc/7Zksmsm1/0-Carrinho.png"
               onClick={() => navigate("/carrinho")}
             />
+            {qtdCarrinho > 0 && (
+              <span className={styles.carrinhoNotificacao}>
+                {qtdCarrinho}
+              </span>
+            )}
           </div>
           <div className={styles.baseBotao}>
             <MenuUsuario />
           </div>
           <div className={styles.baseBotao}>
             <button
-              className={styles.botaoTema}
               onClick={toggleTheme}
               title={temaClaro ? "Claro" : "Escuro"}
             >
               <img
-                className={styles.atalhoTema}
+                className={styles.botaoTema}
                 src="https://i.postimg.cc/Jh7TWywG/0Tema.png"
                 alt="Tema"
               />
