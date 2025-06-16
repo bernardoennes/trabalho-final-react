@@ -1,12 +1,10 @@
-import { useState } from "react";
-import { HomePage } from "./Pages/Homepage/home";
-import { Router } from "./Routes/Router";
-// import { AppRoutes } from "./Routes";
+import React from 'react';
+import { HomePage } from './Components/HomePage/HomePage';
+import { UserProfilePage } from './Components/ProfileName/UserProfilePage';
 
 function App() {
-
   return (
-      <Router />
+    <UserProfilePage />
   );
 }
 
