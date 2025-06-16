@@ -96,7 +96,7 @@
 }
 
 .linkedin{
-    color: #b39800;
+    color: #0059ff;
     font-weight: bold;
 }
 
@@ -127,6 +127,10 @@
 }
 
  :global(body.tema-claro) .membroCargo {
+  color:  #c4d4e7
+} 
+
+:global(body.tema-claro) .membroNome {
   color:  #c4d4e7
 } 
 
