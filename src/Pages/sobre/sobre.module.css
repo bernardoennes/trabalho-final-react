@@ -67,6 +67,7 @@
   .membroNome {
     font-size: 22px;
     margin-bottom: 5px;
+    color: #000316;
   }
   
   .membroCargo {
@@ -80,6 +81,7 @@
 .membroExpertise h3 {
   margin-bottom: 5px;
   color: #000316;
+  font-weight: bold
 }
 
 .membroHabilidades ul {
@@ -94,7 +96,7 @@
 }
 
 .linkedin{
-    color: #b39800;
+    color: #0059ff;
     font-weight: bold;
 }
 
@@ -128,6 +130,10 @@
   color:  #c4d4e7
 } 
 
+:global(body.tema-claro) .membroNome {
+  color:  #c4d4e7
+} 
+
 :global(body.tema-claro) .sobreContainer,
 .cardMembro, 
 .membroHabilidades h3,
@@ -135,6 +141,10 @@
 .membroCargo
 {
   transition: background-color 0.5s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global(body.tema-claro) .cardMembro:hover {
+  box-shadow: #7418c5 1px 1px 4px 4px;
 }
 
 
