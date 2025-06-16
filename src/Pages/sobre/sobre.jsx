@@ -10,28 +10,28 @@ const equipe = [
         id : 1,
         nome : "Bernardo",
         cargo : "Pagina do Carrinho" ,
-        habilidades: [],
-        expertise: "",
+        habilidades: ["Paciencia", "Trabalho em equipe", "Resiliência", "Comunicativo"],
+        expertise: "Desenvolvedor Fullstack (em formação), sempre interresado em aprender e me desafiar seja no ramo da programação ou qualquer outra area que me interresse.",
         foto : "https://media.discordapp.net/attachments/1334968146393694218/1384234534777913394/file_000000004b78622fa7aef4d4af74ba50.png?ex=6851b05e&is=68505ede&hm=85849e66a97ecd242a5d11d525e08d13224c5f783bc3ffb3040f6d4e02bafc12&=&format=webp&quality=lossless&width=684&height=684",
-        link : ""
+        link : "https://www.linkedin.com/in/bernardo-ennes-7ab160343/"
     },
     {
         id : 2,
         nome : "Nikolas",
         cargo : "Pagina de Cadastro" ,
-        habilidades: [],
-        expertise: "",
+        habilidades: ["Estratégia", "Empenho", "Astúcia", "Criatividade"],
+        expertise: "Gosto de explorar o universo criativo por meio da modelagem 3D e pixel art, além de resolver problemas difíceis e que desafiem seus conhecimentos.",
         foto : "https://cdn.discordapp.com/attachments/1334968146393694218/1384238192345219092/file_00000000dcd8622f93a11071a84a5841.png?ex=6851b3c6&is=68506246&hm=72afd75984560084d93ffbbfd5de4307987c8c9a7b1794a8284b5bd1b340e954&",
-        link : ""
+        link : "https://www.linkedin.com/in/nikolas-wintter-2608a8317/"
     },
     {
         id : 3,
         nome : "Karen",
         cargo : "Pagina de Login" ,
-        habilidades: [],
-        expertise: "",
-        foto : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55BQs3HG4jOKTIK_dCrjqu1oxu2uKIXBIwQ&s",
-        link : ""
+        habilidades: ["Determinada", "Alegre", "Criativa", "Pró ativa"],
+        expertise: "Minha expertise no dia a dia reflete-se na comunicação com colegas e no bom ambiente de trabalho que ajudo a construir, enquanto minha determinação me impulsiona a buscar constantemente novos aprendizados",
+        foto : "https://cdn.discordapp.com/attachments/1334968146393694218/1384253910981672970/file_0000000091ec61f791925db7484b5bea.png?ex=6851c26a&is=685070ea&hm=61afd6625718a0dbedce573af0f5babd40220e536ee80973de3bb1519c861dcd&",
+        link : "https://www.linkedin.com/in/karen-menezes-77a185341/"
     },
     {
         id : 4,
@@ -40,7 +40,7 @@ const equipe = [
         habilidades: ["Criatividade", "Organização e foco", "Pensamento estratégico", "Autodidatismo"],
         expertise: "Desenvolvimento de páginas com HTML5 semântico e CSS, noções de JavaScript e Java. Criaçã de interfaces criativas e temáticas, explorando cores, tipografias e layouts personalizados com a finalidade de transmitir identidade e estilo em cada projeto.",
         foto : "https://cdn.discordapp.com/attachments/1334968146393694218/1384236750146371606/file_00000000a590622fbda6cd8c827b1e1a.png?ex=6851b26f&is=685060ef&hm=35813f48a1e00cd76fd27c6bb7d5f3079658357eb30f172ffbcdbf123fb2784a&",
-        link : ""
+        link : "https://www.linkedin.com/in/laryssa-b-254775182/"
     },
     {
         id : 5,
