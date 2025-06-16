@@ -4,20 +4,21 @@ import { Navbar } from "../../Components/Navbar/navbar";
 import { Footer } from "../../Components/Footer/footer";
 import { ButtonCommon } from "../../Components/Button/Comum/buttonCommon";
 import styles from "./Carrinho.module.css";
+import { useCarrinho } from "../../Contexts/CarrinhoContext";
 
 const Carrinho = () => {
+  const { carrinho, removerDoCarrinho } = useCarrinho();
   const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [quantidades, setQuantidades] = useState({});
 
   useEffect(() => {
-    const nomesCarrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
+    if (!carrinho) return;
     axios
       .get("http://localhost:8080/produtos")
       .then((res) => {
         const produtosNoCarrinho = res.data.filter((produto) =>
-          nomesCarrinho.includes(produto.nome)
+          carrinho.includes(produto.nome)
         );
         setProdutos(produtosNoCarrinho);
 
@@ -30,7 +31,7 @@ const Carrinho = () => {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [carrinho]);
 
   const alterarQuantidade = (nomeProduto, novaQuantidade) => {
     if (novaQuantidade >= 1) {
@@ -42,10 +43,7 @@ const Carrinho = () => {
   };
 
   const removerProduto = (nomeProduto) => {
-    const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho")) || [];
-    const novoCarrinho = carrinhoAtual.filter((nome) => nome !== nomeProduto);
-    localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
-
+    removerDoCarrinho(nomeProduto);
     setProdutos((prev) =>
       prev.filter((produto) => produto.nome !== nomeProduto)
     );

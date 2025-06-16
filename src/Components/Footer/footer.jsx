@@ -29,8 +29,8 @@ export function Footer() {
       </div>
 
       <p className={styles.copy}>
-        &copy; 2025 ChineseKingdom. Todos os direitos reservados. — Trabalho
-        Individual, Laryssa Peixoto - Desenvolvimento Web
+        &copy; 2025 Grupo 1. Todos os direitos reservados. — Trabalho
+        em Grupo: Desenvolvimento Web
       </p>
     </footer>
   );

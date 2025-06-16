@@ -7,6 +7,7 @@ import { Cadastrar } from "../pages/cadastroPage/createAccountPage";
 import { Login } from "../Pages/login/login";
 import { Ajuda } from "../Pages/Ajuda/Ajuda";
 
+
 export function Router() {
     return  (
         <Routes>
