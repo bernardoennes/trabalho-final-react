@@ -57,7 +57,12 @@ export function Navbar() {
     <div>
       <nav className={styles.navbar}>
         <div className={styles.intro}>
-          <div className={styles.logoBack}>
+          <div
+            className={styles.logoBack}
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/")}
+            title="Ir para a página inicial"
+          >
             <img
               className={styles.logo}
               src="https://i.postimg.cc/02mXGRd2/0Logo.png"

@@ -1,8 +1,8 @@
 .button {
   background-color: #910a67;
   border: 1px solid #910a67;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 90%;
+  margin-left: 10px;
   display: flex;
   height: 7vh;
   width: 8vh;
