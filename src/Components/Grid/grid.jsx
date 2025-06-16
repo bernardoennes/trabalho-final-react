@@ -54,10 +54,23 @@ export function Grid({ categoria, busca }) {
   }, [categoria, busca]);
 
   const addCarrinho = (produto) => {
+    let carrinhoAtual = [];
+    try {
+      const carrinhoStr = localStorage.getItem("carrinho");
+      carrinhoAtual = carrinhoStr ? JSON.parse(carrinhoStr) : [];
+      if (!Array.isArray(carrinhoAtual)) carrinhoAtual = [];
+    } catch {
+      carrinhoAtual = [];
+    }
+
+    if (!carrinhoAtual.includes(produto.nome)) {
+      carrinhoAtual.push(produto.nome);
+      localStorage.setItem("carrinho", JSON.stringify(carrinhoAtual));
+      window.dispatchEvent(new Event("carrinhoUpdate"));
+    }
+
     setCarrinho((antCarrinho) => {
       const novoCarrinho = [...antCarrinho, produto];
-      console.log("Carrinho atualizado:", novoCarrinho);
-      console.log("Produto adicionado:", produto);
       return novoCarrinho;
     });
     setRetornoPopup(`${produto.nome} adicionado ao carrinho com sucesso!`);
