@@ -12,12 +12,12 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  
+
 }
 
 .login-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e1b4b 0%, #581c87 50%, #0f172a 100%);
+  background: linear-gradient(135deg, #3C0753 0%, #720455 50%, #030637 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,10 +29,9 @@ body {
 
 .login-card,
 .dashboard-card {
-  background: rgba(252, 252, 252, 0.95);
+  background: rgba(255, 255, 255, 0.70);
   border-radius: 1rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(241, 238, 238, 0.473);
   backdrop-filter: blur(10px);
   padding: 2rem;
   max-width: 400px;
@@ -54,27 +53,11 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
-}
-
-.primary-icon {
-  background: linear-gradient(135deg, #4e114e, #9556a5);
-}
-
-.success-icon {
-  background: linear-gradient(135deg, #4e114e, #5e226d);
-}
-
-.icon {
-  width: 2rem;
-  height: 2rem;
-}
-
-.primary-icon .icon {
-  color: white;
-}
-
-.success-icon .icon {
-  color: white;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-image: url('https://i.postimg.cc/02mXGRd2/0Logo.png');
 }
 
 .login-title,
@@ -86,6 +69,7 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
+  font-family: "Felipa", serif;
 }
 
 .login-subtitle,
@@ -197,6 +181,7 @@ body {
   color: white;
   position: relative;
   overflow: hidden;
+  font-family: "Rubik", sans-serif;
 }
 
 .logout-btn::before {
@@ -230,8 +215,13 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .user-info {
@@ -269,22 +259,22 @@ body {
   .app-container {
     padding: 0.5rem;
   }
-  
+
   .login-card,
   .dashboard-card {
     padding: 1.5rem;
   }
-  
+
   .login-title,
   .dashboard-title {
     font-size: 1.25rem;
   }
-  
+
   .icon-container {
     width: 3rem;
     height: 3rem;
   }
-  
+
   .icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -318,6 +308,7 @@ body {
     opacity: 0;
     transform: translateY(30px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);

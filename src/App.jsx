@@ -1,11 +1,12 @@
 import React from 'react';
 import { HomePage } from './Components/HomePage/HomePage';
-import { UserProfilePage } from './Components/ProfileName/UserProfilePage';
+import { Router } from "./Routes/Router";
 
 function App() {
   return (
-    <UserProfilePage />
+    <Router />
   );
 }
 
 export default App;
+
