@@ -5,6 +5,7 @@ import Sobre from "../Pages/sobre/sobre";
 import Carrinho from "../Pages/Carrinho/Carrinho";
 import { Cadastrar } from "../pages/cadastroPage/createAccountPage";
 import { Login } from "../Pages/login/login";
+import { Ajuda } from "../Pages/Ajuda/Ajuda";
 
 export function Router() {
     return  (
@@ -16,6 +17,7 @@ export function Router() {
             <Route path="/cadastro" element={<Cadastrar/>}/>
             <Route path="/categoria/:nomeCategoria" element={<HomePage />}/>
             <Route path="/search" element={<HomePage />} />
+            <Route path="/ajuda" element={<Ajuda />} />
         </Routes>
     )
 }
