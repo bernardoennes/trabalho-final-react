@@ -67,6 +67,7 @@
   .membroNome {
     font-size: 22px;
     margin-bottom: 5px;
+    color: #000316;
   }
   
   .membroCargo {
@@ -80,6 +81,7 @@
 .membroExpertise h3 {
   margin-bottom: 5px;
   color: #000316;
+  font-weight: bold
 }
 
 .membroHabilidades ul {
