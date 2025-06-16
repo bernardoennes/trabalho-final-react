@@ -14,7 +14,9 @@ export function Card({ nome, preco, imagem, descricao, addCarrinho }) {
       </div>
       <div className={styles.opcoes}>
         <CarrinhoB addCarrinho={addCarrinho} />
-        <Tag>R$ {preco}</Tag>
+        <Tag>
+          {`R$ ${Number(preco).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
+        </Tag>
         <Descricao text={descricao} />
       </div>
     </div>

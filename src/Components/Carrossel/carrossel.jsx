@@ -4,20 +4,20 @@ const banners = [
   {
     image: 'https://i.pinimg.com/736x/29/8a/23/298a23049a2c5bab71b451dc37044b70.jpg',
     alt: 'Corvo 1',
-    title: 'Bem-vindo ao Refúgio das Sombras',
-    description: 'Livros que ecoam nas profundezas da alma — mistério, horror e poesia em cada página.',
+    title: 'Bem-vindo ao Canto do Corvo',
+    description: 'Um espaço para explorar histórias envolventes, mundos fantásticos e clássicos atemporais.',
   },
   {
     image: 'https://i.pinimg.com/736x/f4/2b/68/f42b68a8e2414e6196125a980e234b56.jpg',
     alt: 'Corvo 2',
-    title: 'Histórias que Sussurram na Escuridão',
-    description: 'Descubra clássicos góticos, contos macabros e narrativas que arrepiam até o silêncio.',
+    title: 'Narrativas que Encantam e Intrigam',
+    description: 'Dos grandes mestres da literatura gótica às novas vozes da fantasia — descubra sua próxima leitura favorita.',
   },
   {
     image: 'https://cdna.artstation.com/p/assets/images/images/025/712/840/large/flavio-da-costa-war-worlds-rio01a.jpg?1586703667',
     alt: 'Corvo 3',
-    title: 'O Conhecimento Está à Espreita',
-    description: 'Entre nas sombras. Faça seu pedido e receba o obscuro conforto das palavras em sua morada.',
+    title: 'Leve a Magia dos Livros para Casa',
+    description: 'Explore nosso acervo e receba conhecimento, emoção e beleza no conforto do seu lar.',
   },
 ];
 
