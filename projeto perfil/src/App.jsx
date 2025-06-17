@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthProvider } from './contexts/AuthContexts';
+import { AuthProvider } from './contexts/AuthContext';
 import { UserProfilePage } from './components/UserProfilePage';
 
 function App() {
